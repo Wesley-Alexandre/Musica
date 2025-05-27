@@ -31,6 +31,19 @@ Este é um sistema web para gerenciar artistas, músicas e playlists. Criado com
    ```bash
    git clone https://github.com/Wesley-Alexandre/Musica.git
 
+   cd Musica
+
+   dotnet restore
+   
+   dotnet ef database update
+
+   dotnet run
+
+##   ✍️ Autor
+## Wesley Alexandre
+
+
+
 
 
 
