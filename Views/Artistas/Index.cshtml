@@ -1,0 +1,36 @@
+@model IEnumerable<RepositorioMusical.Models.Artista>
+
+@{
+    ViewData["Title"] = "Lista de Artistas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Gênero</th>
+            <th>Músicas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artista in Model)
+        {
+            <tr>
+                <td>@artista.Nome</td>
+                <td>@artista.Genero</td>
+                <td>
+                    <ul>
+                        @foreach (var musica in artista.Musicas)
+                        {
+                            <li>
+                            @musica.Titulo (@(musica.DuracaoSegundos / 60)m @(musica.DuracaoSegundos % 60)s)
+                            </li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

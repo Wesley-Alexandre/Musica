@@ -1,0 +1,21 @@
+@model RepositorioMusical.Models.Artista
+
+@{
+    ViewData["Title"] = "Detalhes do Artista";
+}
+
+<h1>Detalhes de @Model.Nome</h1>
+
+<p><strong>Gênero:</strong> @Model.Genero</p>
+
+<h2>Músicas</h2>
+<ul>
+@foreach (var musica in Model.Musicas)
+{
+    <li>
+        @musica.Titulo - @musica.Genero - @musica.DuracaoSegundos seg
+    </li>
+}
+</ul>
+
+<a asp-action="Index">Voltar à Lista</a>
